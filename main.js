@@ -30,7 +30,9 @@ window.onload = () => {
     // Functions
     const setColor = (e) => {
         let elem = e.target;
-        elem.style.backgroundColor = "green";
+        let selectedColor = colors[Math.floor(Math.random() * colors.length)]
+
+        elem.style.backgroundColor = selectedColor;
     }
 
     const setGrid = (size) => {

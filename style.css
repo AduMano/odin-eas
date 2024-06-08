@@ -33,7 +33,7 @@ html, body {
             width: 420px; height: 420px;
             margin: auto;
 
-            background-color: white;
+            background-color: black;
 
             display: flex;
             flex-wrap: wrap;
