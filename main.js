@@ -3,6 +3,29 @@ window.onload = () => {
     // Generate 16 x 16 grid
     // Init
     let compGrid = document.querySelector(".grid");
+    const colors = [
+        "#FF5733",
+        "#33FF57",
+        "#3357FF",
+        "#FF33A1",
+        "#A133FF",
+        "#33FFF1",
+        "#FFC733",
+        "#33FFAC",
+        "#FF5733",
+        "#5733FF",
+        "#FF3357",
+        "#57FF33",
+        "#3357FF",
+        "#FF5733",
+        "#5733FF",
+        "#33FF57",
+        "#FF33A1",
+        "#33FFAC",
+        "#FFC733",
+        "#33FFF1"
+    ];
+    const setSizeBtn = document.querySelector("button");
 
     // Functions
     const setColor = (e) => {
@@ -11,6 +34,12 @@ window.onload = () => {
     }
 
     const setGrid = (size) => {
+        // Remove All Child
+        while (compGrid.firstChild) {
+            compGrid.removeChild(compGrid.firstChild);
+        }
+
+        // Set Grid
         for (let i = 0; i < (size * size); i++) {
             const block = document.createElement("div");
             block.classList.add("block");
@@ -21,6 +50,11 @@ window.onload = () => {
         }
 
     }
+
+    // EVENTS
+    setSizeBtn.addEventListener("click", () => {
+        // Ask user to enter 1 - 100 size
+    });
 
     setGrid(16);
 }
