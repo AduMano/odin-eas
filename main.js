@@ -48,12 +48,29 @@ window.onload = () => {
 
             compGrid.appendChild(block);
         }
-
     }
 
     // EVENTS
     setSizeBtn.addEventListener("click", () => {
         // Ask user to enter 1 - 100 size
+        let getSize = 0;
+
+        // Get Input and Validate
+        while (true) {
+            getSize = parseInt(prompt("Enter a number to set a grid n x n (1 - 100): "));
+            
+            if (getSize !== NaN && 
+                (getSize >= 1 && getSize <= 100)
+            ) {
+                break;
+            }
+            else {
+                alert("Please enter between 1 to 100 only");
+            }
+        }
+
+        // Set Up Grid
+        setGrid(getSize);
     });
 
     setGrid(16);
