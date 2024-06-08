@@ -30,9 +30,12 @@ window.onload = () => {
     // Functions
     const setColor = (e) => {
         let elem = e.target;
-        let selectedColor = colors[Math.floor(Math.random() * colors.length)]
+        let selectedColor = colors[Math.floor(Math.random() * colors.length)];
+        let opacity = parseFloat(elem.getAttribute("data-opacity")) - 0.1;
 
         elem.style.backgroundColor = selectedColor;
+        elem.style.opacity = "" + opacity;
+        elem.setAttribute("data-opacity", "" + opacity);
     }
 
     const setGrid = (size) => {
@@ -45,6 +48,9 @@ window.onload = () => {
         for (let i = 0; i < (size * size); i++) {
             const block = document.createElement("div");
             block.classList.add("block");
+            // This is to remind the block what opacity 
+            // level it is.
+            block.setAttribute("data-opacity", "1.1"); 
             block.style.flex = "1 1 calc(100% / " + size + ")";
             block.addEventListener("mouseover", (e) => {setColor(e)});
 
